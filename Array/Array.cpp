@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    //Масив - це набір однотипних даних, об'єднаний загольним ім'ям.
+    //Масив - це набір однотипних даних, об'єднаний загaльним ім'ям.
 
     /*int train[3];
     train[0] = 3;
@@ -41,7 +41,7 @@ int main()
     double arr[size];
     */
 
-    // ініціалізація масиву
+    //Перший спосіб — ініціалізація при створенні.
    /* const int size = 10;
     int arr[size] = { 1,2,3,4,5,6,7,8,9,10 };
 
@@ -68,7 +68,7 @@ int main()
     //}
     //cout << endl;
 
-    //// ініціалізація масиву за допомогою циклу.
+    //// Другий спосіб — ініціалізація масиву за допомогою	циклу.
     //int arr4[size]{};
     //for (int i = 0; i < i < size; i++)
     //{
@@ -80,14 +80,19 @@ int main()
     //    cout << arr4[i] << " ";
     //}
 
+    //Написати програму, яка знаходить суму всіх від'ємних	значень у масиві.
     //const int SIZE = 10;
     //int summa = 0;
-    //int max = 0;
-    //int min = 0;
+    //int first_negative;
+    //int first_positive;
     ////int arr5[SIZE] = { 5, 7, -8, -9, 14, 12, -2, -3, 6, 8 };
     //int arr5[SIZE] = {10, 25, 36, 85,  };
-    //int max = arr5[0] = {5, -8, -9, 14, -2,}
+    //int max = arr5[0], min = arr5[0];
+    //  
     //for (int i = 0; i < SIZE; i++)
+    // {
+    // cout <<arr5[i] << " ";
+    // }
     //for (int i = 0; i < SIZE; i++)
     //{
     //    if (arr5[i] < 0)
@@ -97,30 +102,35 @@ int main()
     //    }
     //}
 
-    //for (int i = SIZE-1; i >= 0; i++)
+    //for (int i = SIZE-1; i >= 0; i--)
     //{
-    //    if (arr5[i])
+    //    if (arr5[i]>0)
+    //    {
+    //     last_positive = arr5[i];
+    //     break;
+    //     }
     //}
 
     //for (int i = 0; i < SIZE; i++)
-    //for (int i = 0; i < SIZE; i++)
-    //   {
+    //{
+
     //    if (arr5[i] < 0) {
     //        summa += arr5[i];
     //    }
-    //    if (arr5[i]<min)
+    //    if (arr5[i] < min)
     //    {
-    //        min += arr5[i];
-    //    }
-    //    if (arr5[i]<max)
+    //        min = arr5[i];
+    //      }
+    //    if (arr5[i] > max)
     //    {
-    //        max += arr5[i];
+    //        max = arr5[i];
     //    }
-
-    // }
-    // cout << " " << summa << endl;
-    // cout << "Max " << max << endl;
-    // cout << "Min" << min << endl;
+    //}
+    //cout << "\nSumma negative elements : " << summa << endl;
+    //cout << "\nMax element : " << max << endl;
+    //cout << "\nMin element : " << min << endl;
+    //cout << "\nFirst negative element : " << first_negative << endl;
+    //cout << "\nLast positive  element : " << last_positive << endl;
 
 
 
@@ -214,22 +224,76 @@ int main()
     //    cout << a4[i] << " ";
     //}
 
+    //cout << endl;
+    //cout << "Practical work 5" << endl;
+    //cout << endl;
+
+
+    //int a5[] = { 5, 7, -8, -9, 14, 12, -2 };
+
+    //for (int i = 0; i < 7; i++)
+    //{
+    //    if (a5[i] < 0)
+    //        a5[i] = a5[i] * -1;
+
+    //    cout << a5[i] << " ";
+    //}
+
+
     cout << endl;
-    cout << "Practical work 5" << endl;
+    cout << "Homework 1" << endl;
     cout << endl;
 
 
-    int a5[] = { 5, 7, -8, -9, 14, 12, -2 };
+    int profit[12] = { 35000, 84000, 36000, 83000, 26000, 33000, 65000, 20000, 45000, 35000, 84000, 36000 };
 
-    for (int i = 0; i < 7; i++)
+    int fromMonth;
+    cout << "Enter the month number from which the analysis should star: ";
+    cin >> fromMonth;
+    int toMonth;
+    cout << "Enter the month number up to which the analysis should be performend: ";
+    cin >> toMonth;
+
+    int max = profit[fromMonth - 1];
+    int min = profit[toMonth - 1];
+
+    int maxMonth = fromMonth;
+    int minMonth = fromMonth;
+
+    for (int i = fromMonth - 1; i < toMonth; i++)
     {
-        if (a5[i] < 0)
-            a5[i] = a5[i] * -1;
+        if (profit[i] > max)
+        {
+            max = profit[i];
+            maxMonth = i + 1;
+        }
+        if (profit[i] < min)
+        {
+            min = profit[i];
+            minMonth = i + 1;
+        }
 
-        cout << a5[i] << " ";
     }
 
-   
+    string month[12] = { "January", "February", "March", "April", "May", "Juni", "July", "August", "September", "Oktober", "November", "December" };
+
+    cout << " The maximum profit was " << max << " in month " << month[maxMonth-1] << endl;
+    cout << " The minimum profit was " << min << " in month " << month[minMonth-1] << endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
